@@ -26,12 +26,10 @@ const router = new VueRouter({
 // 前置导航守卫
 router.beforeEach((to, from, next) => {
   // 1.判断是不是登录路由
-  // if (to.path === '/login') return next()
-  // // 2.判断是否登录
-  // if (!store.getUser().token) return next('/login')
-  // // 3.放行
-  // next()
-  if (to.path === '/login' && !store.getUser().token) return next('/login')
+  if (to.path === '/login') return next()
+  // 2.判断是否登录
+  if (!store.getUser().token) return next('/login')
+  // 3.放行
   next()
 })
 export default router
