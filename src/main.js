@@ -12,6 +12,9 @@ import '@/style/index.less'
 
 import axios from '@/api'
 
+import myCom from '@/components'
+Vue.use(myCom)
+
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
