@@ -38,17 +38,27 @@
         </el-form-item>
       </el-form>
     </el-card>
-    <my-test>
-      <template v-slot:content="scope">content 得到组件内部数据：{{scope.msg}}</template>
-      <div slot='footer'>footer</div>
-    </my-test>
+    <el-card>
+      <div slot='header'>
+        根据哦哦哦哦哦哦
+      </div>
+      <el-table :data="articles">
+        <el-table-column label="封面" prop="img"></el-table-column>
+      </el-table>
+      <div style="text-align:center;margin-top:30px">
+        <el-pagination
+          background
+          layout="prev, pager, next"
+          :total="1000">
+        </el-pagination>
+      </div>
+
+    </el-card>
+
   </div>
 </template>
 <script>
-// import MyTest from '@/components/my-test'
-// import MyBread from '@/components/my-bread'
 export default {
-  // components: { MyTest, MyBread },
   data () {
     return {
       reqParams: {
@@ -56,7 +66,8 @@ export default {
         channer_id: null
       },
       channelOptions: [{ value: 1, label: 'js' }],
-      dateArr: []
+      dateArr: [],
+      articles: []
 
     }
   }
@@ -64,5 +75,7 @@ export default {
 }
 </script>
 <style scoped lang='less'>
-
+.el-card{
+  margin-bottom:20px;
+}
 </style>
